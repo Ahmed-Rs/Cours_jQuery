@@ -1,11 +1,17 @@
 $(function(){
 
-    $("#p1").click(function(){
-        $("#p5").hide("1000", function(){     // Ajout d'effets aux Events. Ici on a usé d'un callback, c'est à dire insérer une event dans un autre event. Il s'enclenche dès la fin du premier event.
-            $("#p2").hide("1000", function(){
-                $('#p7').hide("2000");        // On peut mettre autant de callback que l'on souhaite.
-            });          
-        });
+    $("#p3").click(function(){      // Le toggle(); permet de faire le contraire de l'état actuel. Si c'est invisible il le rend visible et vice-versa.
+        $("#p4").toggle();      
     });
-    
+
+    $("#p8").fadeOut();             // La fct. fade(); change l'opacité d'un objet.
+    $("#p6").hover(function(){
+        $("#p8").fadeIn(3000);
+    });
+
+    $("#p1").click(function(){        // Le fadeToggle(); fait le fadeOut(); puis son contraire: le fadeIn();
+        $("#p5").fadeTo("3000", 0.5);   // Pour la fct. fadeTo(); , le 1er argument est le temps, le 2nd est l'opacité.
+
+    });
+
 });
