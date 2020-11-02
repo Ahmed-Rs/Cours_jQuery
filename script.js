@@ -1,17 +1,12 @@
 $(function(){
 
-    $("#p3").click(function(){      // Le toggle(); permet de faire le contraire de l'état actuel. Si c'est invisible il le rend visible et vice-versa.
-        $("#p4").toggle();      
-    });
-
-    $("#p8").fadeOut();             // La fct. fade(); change l'opacité d'un objet.
-    $("#p6").hover(function(){
-        $("#p8").fadeIn(3000);
-    });
-
-    $("#p1").click(function(){        // Le fadeToggle(); fait le fadeOut(); puis son contraire: le fadeIn();
-        $("#p5").fadeTo("3000", 0.5);   // Pour la fct. fadeTo(); , le 1er argument est le temps, le 2nd est l'opacité.
-
+    $("button").click(function(){
+        $("div").animate({      // On utilise la fct. animat(); qui prend comme arguments, d'abord l'objet auquel on peut apporter plusieurs modif. , puis le temps d'execution, puis si on veut une troisième argument qui est un callback.
+            left: '500px',         // qui s'executera une fois que l'animation est terminée.
+            opacity: '0.3',
+            width: '+=150',
+            height: '+=150px'
+        },5000);
     });
 
 });
