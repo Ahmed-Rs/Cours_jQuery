@@ -1,26 +1,26 @@
 $(function(){
 
-    $("#but1").click(function(){
+    $("#start1").click(function(){
 
-        $("#but3").width("200");    // Il ya des raccourci en jQuery qui permettent de demander la valeur d'une propriété ou de la modifier direct. sans utiliser la fct. css(); 
-        console.log($("#but3").height());
-        $("#p1").css("color", "blue"); // La  fct. css(); permet d'influer directement sur les propriétés css des éléments html.
+        $("#p1").parents(".special").css("border-color", "green "); // En ciblant les parents, on peut aussi en selcetionner certains par ex. avec une classe déterminée.
+        // $("#p4").siblings().css("border-color", "yellow");  // La fct. siblings(); ccible les frères de l'élément sélectionné sauf lui-même.
+        // $("#p4").next().css("border-color", "yellow"); // La fct. next(); cible le frère juste après le #p4.
+        // $("p").first().css("border-color", "yellow");  // first(); cible le premier élément de tous les "p". last(); aurait ciblé le dernier.
+        // $("p").ep(2).css("border-color", "yellow");  // On cible ici le 3e paragraphe parmis les "p". (On compte à partir de zéro).
+        // $("p").filter(".fil").css("border-color", "yellow"); // On filtre ici les paragraphes qui portent la classe ".fil". Pour cibler ceux qui n'ont PAS cette class, on remplace filter(); par not();
+    
     });
 
+    $("#start2").click(function(){
 
-    $("#but2").click(function(){
-
-        console.log( $("#p1").css("color") );  // En enlevant la valeur de la propriété demandée, ici blue, la fct. css(); ne fera que nous renvoyer la valeur de la propriété en question. 
+        $("#div4").children().css("border-color","blue");  // On séléctionne les enfants directs de #div4.
+        
     });
 
+    $("#start3").click(function(){
 
-    $("#but3").click(function(){
-
-        $("#p1").css({            //    On peut insérer plusieurs propriétés css à un élément html en mettant un objet {} à la fct. css(); 
-            "color": "red",
-            "font-weight": "bold",
-            "background": "yellow"
-        });
+        $("#div4").find("p").css("border-color","blue");  // On fait une recherche des "p" parmis tous les descendants de #div4 et si on veut les sélectionner tous, on utlisie ("*") comme arg. à la fct. find();
+    
     });
 
 
