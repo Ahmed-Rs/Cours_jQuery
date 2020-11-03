@@ -1,15 +1,27 @@
 $(function(){
 
     $("#but1").click(function(){
-        $("#p1").addClass("red"); // La fct. addClass(); permet d'assigner une ou plusieurs classes à un ou plusieurs éléments
-        });
+
+        $("#but3").width("200");    // Il ya des raccourci en jQuery qui permettent de demander la valeur d'une propriété ou de la modifier direct. sans utiliser la fct. css(); 
+        console.log($("#but3").height());
+        $("#p1").css("color", "blue"); // La  fct. css(); permet d'influer directement sur les propriétés css des éléments html.
+    });
+
 
     $("#but2").click(function(){
-        $("#p1").removeClass("red")
+
+        console.log( $("#p1").css("color") );  // En enlevant la valeur de la propriété demandée, ici blue, la fct. css(); ne fera que nous renvoyer la valeur de la propriété en question. 
     });
 
 
     $("#but3").click(function(){
-        $("#p1").toggleClass("red"); // Le toggleClass(); permet à chaque fois que l'on clique dessus de switcher entre addClass et removeClass.
+
+        $("#p1").css({            //    On peut insérer plusieurs propriétés css à un élément html en mettant un objet {} à la fct. css(); 
+            "color": "red",
+            "font-weight": "bold",
+            "background": "yellow"
+        });
     });
+
+
 });
